@@ -1,0 +1,23 @@
+.content {
+    background-color: #E9C9C9;
+    height: 100%;
+}
+
+.card-back {
+    background-color: #FAF2F2;
+}
+
+.todo-card {
+    width: 30%;
+}
+
+.outer-style{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+span {
+    font-family: Arial, Helvetica, sans-serif;
+}

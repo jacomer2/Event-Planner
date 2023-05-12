@@ -1,0 +1,21 @@
+<div class="p-2 d-flex justify-content-center content outer-style">
+    <div class="card card-back" style="width: 62rem;">
+        <div class="card-back m-3">
+            <h1 class="display-3 m-0"> {{event.name}} </h1>
+            <h3 class="display-6"> {{event.description}} </h3>
+            <p> {{event.date}} </p>
+            <p>
+                <span> {{event.street}} </span>
+                <br>
+                <span> {{event.city}} </span>
+                <span> {{event.state}} </span>
+                <span> {{event.zipcode}} </span>
+            </p>
+            <br>
+            <div class="card todo-card">
+                <app-todo-list></app-todo-list>
+            </div>
+
+        </div>
+    </div>
+</div>

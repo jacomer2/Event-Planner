@@ -8,6 +8,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EventsPageComponent } from './Events/events-page/events-page.component';
 import { CreateEventComponent } from './Events/create-event/create-event.component';
 import { HomeComponent } from './home/home.component';
+import { EventDetailsComponent } from './Events/events-page/event-details/event-details.component';
+import { TodoListComponent } from './Events/events-page/event-details/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     SidebarComponent,
     EventsPageComponent,
     CreateEventComponent,
-    HomeComponent
+    HomeComponent,
+    EventDetailsComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,

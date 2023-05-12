@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsPageComponent } from './Events/events-page/events-page.component';
 import { CreateEventComponent } from './Events/create-event/create-event.component';
 import { HomeComponent } from './home/home.component';
+import { EventDetailsComponent } from './Events/events-page/event-details/event-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {path: 'dashboard', component: EventsPageComponent},
-  {path: 'create-event', component: CreateEventComponent}
+  {path: 'create-event', component: CreateEventComponent},
+  {path: 'event-details', component: EventDetailsComponent}
 ];
 
 @NgModule({

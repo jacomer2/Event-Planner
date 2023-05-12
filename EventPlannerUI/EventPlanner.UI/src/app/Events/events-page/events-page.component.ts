@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Event} from 'src/app/models/event-model/event.model'
+import {Event} from 'src/app/models/event-model/event.model';
 
 @Component({
   selector: 'app-events-page',
