@@ -10,6 +10,7 @@ import { CreateEventComponent } from './Events/create-event/create-event.compone
 import { HomeComponent } from './home/home.component';
 import { EventDetailsComponent } from './Events/events-page/event-details/event-details.component';
 import { TodoListComponent } from './Events/events-page/event-details/todo-list/todo-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TodoListComponent } from './Events/events-page/event-details/todo-list/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  items: string[] = [];
+  items: string[] = [
+    "one item",
+    "two"
+  ];
 
   ngOnInit(): void {
     this.Todo();
@@ -25,11 +29,17 @@ export class TodoListComponent implements OnInit {
 
       if (myNodelist != null) {
         for (let i = 0; i < myNodelist.length; i++) {
-          var span = document.createElement("SPAN");
-          var txt = document.createTextNode("\u00D7");
-          span.className = "close";
-          span.appendChild(txt);
-          myNodelist[i].appendChild(span);
+          const childNode = myNodelist[i] as HTMLElement;
+          console.log(childNode.childNodes.length);
+          if (childNode.childNodes.length === 0) {
+            console.log("inside");
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+          }
+
         }
       }
     }
@@ -59,7 +69,33 @@ export class TodoListComponent implements OnInit {
 
   // Create a new list item when clicking on the "Add" button
   newElement(): void {
-    
+    const inputValue = (document.getElementById("myInput") as HTMLInputElement).value; // Get the input value from your implementation
+    if (inputValue) {
+      this.items.push(inputValue); // Add the new item to the array
+      this.Todo();
+    }
+
+    // if (inputValue != null) {
+    //   inputValue = "";
+    // }
+
+    // var span = document.createElement("SPAN");
+    // var txt = document.createTextNode("\u00D7");
+    // span.className = "close";
+    // span.appendChild(txt);
+    // li.appendChild(span);
+
+    // var close = document.getElementsByClassName("close");
+    // for (let i = 0; i < close.length; i++) {
+    //   close[i].addEventListener("click", function () {
+    //     var div = close[i].parentElement;
+    //     if (div != null) {
+    //       div.style.display = "none";
+    //     }
+    //   });
+    // }
+    // }
+
   }
 
   // Create a new list item when clicking on the "Add" button
