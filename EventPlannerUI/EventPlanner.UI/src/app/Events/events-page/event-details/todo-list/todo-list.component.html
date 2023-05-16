@@ -1,9 +1,12 @@
 <div id="myDIV" class="header">
     <h2>To-Do</h2>
-    <input type="text" id="myInput" placeholder="Title..." value="Initial Value">
+    <input type="text" id="myInput" placeholder="Task...">
     <span (click)="newElement()" class="addBtn">Add</span>
 </div>
 
 <ul id="myUL">
-    <li class="p-2" *ngFor="let item of items"> {{ item }} </li>
+    <li class="new-list-items" *ngFor="let item of items" (click)="itemClicked(item)" [ngClass]="{ 'checked': item.checked }"> 
+        {{ item.text }} 
+        <span class="close" (click)="removeItem(item)"> &#215; </span>
+    </li>
 </ul>

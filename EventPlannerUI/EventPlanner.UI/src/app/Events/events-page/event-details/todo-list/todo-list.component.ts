@@ -8,13 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  items: string[] = [
-    "one item",
-    "two"
-  ];
+  items: { text: string, checked: boolean } [] = [];
 
   ngOnInit(): void {
-    this.Todo();
   }
 
   constructor() {
@@ -31,7 +27,7 @@ export class TodoListComponent implements OnInit {
         for (let i = 0; i < myNodelist.length; i++) {
           const childNode = myNodelist[i] as HTMLElement;
           console.log(childNode.childNodes.length);
-          if (childNode.childNodes.length === 0) {
+          {
             console.log("inside");
             var span = document.createElement("SPAN");
             var txt = document.createTextNode("\u00D7");
@@ -69,85 +65,30 @@ export class TodoListComponent implements OnInit {
 
   // Create a new list item when clicking on the "Add" button
   newElement(): void {
-    const inputValue = (document.getElementById("myInput") as HTMLInputElement).value; // Get the input value from your implementation
-    if (inputValue) {
+    const inputValue: { text: string, checked: boolean } = { text: (document.getElementById("myInput") as HTMLInputElement).value, checked: false}; // Get the input value from your implementation
+    if (inputValue.text.length > 0) {
+      console.log(inputValue);
       this.items.push(inputValue); // Add the new item to the array
-      this.Todo();
+      (document.getElementById("myInput") as HTMLInputElement).value = "";
     }
+  }
 
-    // if (inputValue != null) {
-    //   inputValue = "";
-    // }
-
-    // var span = document.createElement("SPAN");
-    // var txt = document.createTextNode("\u00D7");
-    // span.className = "close";
-    // span.appendChild(txt);
-    // li.appendChild(span);
-
-    // var close = document.getElementsByClassName("close");
-    // for (let i = 0; i < close.length; i++) {
-    //   close[i].addEventListener("click", function () {
-    //     var div = close[i].parentElement;
-    //     if (div != null) {
-    //       div.style.display = "none";
-    //     }
-    //   });
-    // }
-    // }
+  removeItem(item: {text: string, checked: boolean}) {
+    const index = this.items.indexOf(item);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+    }
 
   }
 
-  // Create a new list item when clicking on the "Add" button
-  // newElement(): void {
-  //   const li = document.createElement("li");
-  //   let input = document.getElementById("myInput") as HTMLInputElement | null;
-  //   let inputValue = input?.value;
-  //   console.log("Input value: " + inputValue);
-
-  //   input?.addEventListener("click", function (click) {
-  //     console.log("test");
-  //     const target = click.target as HTMLInputElement;
-  //     console.log(target.value);
-  //     var txt = document.createTextNode(target.value);
-  //     li.appendChild(txt);
-
-  //     let myUL = document.getElementById("myUL") as HTMLElement;
-
-  //     if (inputValue != '') {
-  //       myUL.appendChild(li);
-  //     }
-
-  //   });
-
-  // }
-  // // const myUL = document.getElementById("myUL") as HTMLElement | null;
-
-  // // if (inputValue != null && inputValue != '') {
-  // //   if (myUL != null) {
-  // //     myUL.appendChild(li);
-  // //   }
-  // // }
-  // // if (inputValue != null) {
-  // //   inputValue = "";
-  // // }
-
-  // // var span = document.createElement("SPAN");
-  // // var txt = document.createTextNode("\u00D7");
-  // // span.className = "close";
-  // // span.appendChild(txt);
-  // // li.appendChild(span);
-
-  // // var close = document.getElementsByClassName("close");
-  // // for (let i = 0; i < close.length; i++) {
-  // //   close[i].addEventListener("click", function () {
-  // //     var div = close[i].parentElement;
-  // //     if (div != null) {
-  // //       div.style.display = "none";
-  // //     }
-  // //   });
-  // // }
-  // // }
+  itemClicked(item: {text: string, checked: boolean}) {
+    console.log("checked");
+    const index = this.items.indexOf(item);
+    if (index !== -1) {
+      item.checked = !item.checked;
+    }
+    
+  }
 
 
 }
