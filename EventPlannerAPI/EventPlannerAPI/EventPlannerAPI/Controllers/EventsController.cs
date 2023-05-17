@@ -34,5 +34,22 @@ namespace EventPlannerAPI.Controllers
 
             return Ok(eventRequest);
         }
+
+        [HttpGet]
+        [Route("{id:Guid}")]
+    public async Task<IActionResult> GetEvent([FromRoute] Guid id)
+        {
+           var eventret = 
+            await _eventPlannerDbContext.Events.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (eventret == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(eventret);
+        }
+
     }
+    
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {path: 'dashboard', component: EventsPageComponent},
   {path: 'create-event', component: CreateEventComponent},
-  {path: 'event-details', component: EventDetailsComponent}
+  {path: 'event-details/:id', component: EventDetailsComponent}
 ];
 
 @NgModule({

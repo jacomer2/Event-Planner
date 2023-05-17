@@ -23,4 +23,7 @@ export class EventsService {
     addEventRequest);
   }
 
+  getEvent(id: string): Observable<Event> {
+    return this.http.get<Event>(this.baseApiUrl + '/api/events/' + id);
+  }
 }

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {Event} from 'src/app/models/event-model/event.model'
+import { EventsService } from 'src/app/services/events.service';
 
 
 @Component({
@@ -7,10 +9,41 @@ import {Event} from 'src/app/models/event-model/event.model'
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.css']
 })
-export class EventDetailsComponent {
+export class EventDetailsComponent implements OnInit {
+  
+  eventDetails: Event = {
+    id: '',
+    name: '',
+    description: '',
+    date: '',
+    street: '',
+    city: '',
+    state: '',
+    zipcode: 0
+  };
+
+  constructor(private route: ActivatedRoute, private eventsService: EventsService) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe({
+      next: (params) => {
+        const id = params.get('id');
+
+        if (id) {
+          // call api
+          this.eventsService.getEvent(id)
+          .subscribe({
+            next: (response) => {
+              this.eventDetails = response;
+            }
+          });
+        }
+      }
+    })
+  }
 
   event: Event = {
-    id: "dur",
+    id: "123",
     name: "Johnson Wedding",
     description: 'Save the date',
     date: '4/24/23',
