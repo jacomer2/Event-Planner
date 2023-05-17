@@ -1,4 +1,4 @@
-<div class="content p-0 m-0 h-100">
+<div class="content p-0 m-0 h-100 w-100">
     <div class="d-flex justify-content-center mb-3" *ngIf="!events || events.length <= 0">
         <h1 class=""> Create your first event </h1>
     </div>
@@ -10,21 +10,22 @@
         </a>
     </div>
     
-    <div class="container event-card m-1 row">
-        <div *ngFor="let event of events" class="card p-2 m-2 col-3">
+    <div class="outer-row event-card m-1 row w-100 justify-content-center">
+        <div *ngFor="let event of events" class="card  bord border-3 card-back p-2 m-2 col-3">
             <a [routerLink]="['/event-details', event.id ]" class="stretched-link"></a>
             <div class="card-body p-1">
                 <div class="card-text card-header ms-0 ps-0">
-                   <h4>{{event.name}}</h4> 
+                   <h4 class="event-title">{{event.name}}</h4> 
                 </div>
-                <p class="card-text card-description">{{event.description}}</p>
+                <div class="card-body-text">
+                <p class="card-text card-description mt-1">{{event.description}}</p>
                 <p class="card-text card-description">{{"Date: " + event.date}}</p>
                 <span class="card-text card-description">{{event.street}}</span>
                 <br>
                 <span class="card-text card-description">{{event.city + ", "}}</span>
                 <span class="card-text card-description">{{event.state + " "}}</span>
                 <span class="card-text card-description">{{event.zipcode}}</span>
-
+            </div>
 
             </div>
         </div>

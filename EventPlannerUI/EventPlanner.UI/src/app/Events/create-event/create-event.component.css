@@ -1,7 +1,11 @@
 .content {
-    background-color: #E9C9C9;
+    background-color: #fef9f8;
 }
 
 .card-back {
-    background-color: #FAF2F2;
+    background-color: #fef9f7;
+}
+
+.btn-secondary {
+    background-color: #0d0d0d;
 }

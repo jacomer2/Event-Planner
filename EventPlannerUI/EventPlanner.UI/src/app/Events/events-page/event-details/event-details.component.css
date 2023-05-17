@@ -1,10 +1,10 @@
 .content {
-    background-color: #E9C9C9;
+    background-color: #fef9f8;
     height: 100%;
 }
 
 .card-back {
-    background-color: #FAF2F2;
+    background-color: #fef9f7;
 }
 
 .todo-card {
@@ -24,4 +24,12 @@ span {
 
 .button {
     width: 30px;
+}
+
+.btn-danger {
+    background-color: #ea6e45;
+}
+
+.btn-secondary {
+    background-color: #0d0d0d;
 }

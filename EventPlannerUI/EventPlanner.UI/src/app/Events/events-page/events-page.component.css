@@ -1,7 +1,24 @@
 .content {
-    background-color: #E9C9C9;
+    background-color: #fef9f8;
 }
 
 .card {
     width: 23%;
+}
+
+.card-back {
+    background-color: #fef9f7;
+}
+
+.btn-secondary {
+    background-color: #0d0d0d;
+}
+
+.card-header {
+    background-color: transparent;
+}
+
+.bord {
+    border-color: #FACDBE;
+    border-radius: 5px;
 }
