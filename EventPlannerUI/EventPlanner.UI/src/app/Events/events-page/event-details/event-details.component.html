@@ -1,7 +1,12 @@
 <div class="p-2 d-flex justify-content-center content outer-style">
     <div class="card card-back" style="width: 62rem;">
         <div class="card-back m-3">
-            <h1 class="display-3 m-0"> {{eventDetails.name}} </h1>
+            <div class="row"> 
+                <h1 class="col-10 display-3 m-0"> {{eventDetails.name}} </h1>
+                <button type="button" [routerLink]="['/event-details', eventDetails.id, 'edit' ]"class=" col-2 h-25 btn btn-secondary btn-lg mt-2 pe-2">Edit Event</button>
+
+
+            </div>
             <h3 class="display-6"> {{eventDetails.description}} </h3>
             <p> {{eventDetails.date}} </p>
             <p>

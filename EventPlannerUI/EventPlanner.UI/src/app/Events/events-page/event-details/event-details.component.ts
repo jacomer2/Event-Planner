@@ -42,14 +42,4 @@ export class EventDetailsComponent implements OnInit {
     })
   }
 
-  event: Event = {
-    id: "123",
-    name: "Johnson Wedding",
-    description: 'Save the date',
-    date: '4/24/23',
-    street: '124 Pleasant Street',
-    city: 'Morgantown',
-    state: 'WV',
-    zipcode: 26505
-  }
 }

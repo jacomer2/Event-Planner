@@ -13,6 +13,7 @@ import { TodoListComponent } from './Events/events-page/event-details/todo-list/
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { EditEventComponent } from './Events/events-page/edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RouterModule } from '@angular/router';
     CreateEventComponent,
     HomeComponent,
     EventDetailsComponent,
-    TodoListComponent
+    TodoListComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,
