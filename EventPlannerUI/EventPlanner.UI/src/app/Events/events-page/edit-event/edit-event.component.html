@@ -1,1 +1,41 @@
-<p>edit-event works!</p>
+<div class="p-2 d-flex justify-content-center content">
+    <div class="card card-back" style="width: 50rem;">
+        <div class="card-body">
+            <h5 class="card-title display-4 text-center">Update Event</h5>
+            <form #form="ngForm" (ngSubmit)="updateEvent()">
+                <div class="mb-3">
+                  <label class="form-label">Event Title</label>
+                  <input type="text" class="form-control" id="title" 
+                  name="name" [(ngModel)]="eventDetails.name">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Description</label>
+                  <input type="text" class="form-control" id="description"
+                  name="description" [(ngModel)]="eventDetails.description">
+                  <div id="details" class="form-text">Give a brief description of the event, you can change this later.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input placeholder="mm/dd/yyyy"type="text" class="form-control" id="description"
+                    name="date" [(ngModel)]="eventDetails.date">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Location</label>
+                    <input placeholder="Street Address" type="text" class="form-control" id="street"
+                    name="street" [(ngModel)]="eventDetails.street">
+                    <input placeholder="City" type="text" class="form-control mt-2" id="city"
+                    name="city" [(ngModel)]="eventDetails.city">
+                    <input placeholder="State" type="text" class="form-control mt-2" id="state"
+                    name="state" [(ngModel)]="eventDetails.state">
+                    <input placeholder="Zipcode" type="text" class="form-control mt-2" id="zipcode"
+                    name="zipcode" [(ngModel)]="eventDetails.zipcode">
+                  </div>
+                <div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-secondary">Update</button>
+                    </div>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

@@ -37,7 +37,7 @@ namespace EventPlannerAPI.Controllers
 
         [HttpGet]
         [Route("{id:Guid}")]
-    public async Task<IActionResult> GetEvent([FromRoute] Guid id)
+        public async Task<IActionResult> GetEvent([FromRoute] Guid id)
         {
            var eventret = 
             await _eventPlannerDbContext.Events.FirstOrDefaultAsync(x => x.Id == id);
@@ -50,6 +50,48 @@ namespace EventPlannerAPI.Controllers
             return Ok(eventret);
         }
 
+        [HttpPut]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateEvent([FromRoute] Guid id, Event updateEventRequest)
+        {
+            var eventup = await _eventPlannerDbContext.Events.FindAsync(id);
+
+            if (eventup == null)
+            {
+                return NotFound();
+            }
+
+            eventup.Name = updateEventRequest.Name;
+            eventup.Description = updateEventRequest.Description;
+            eventup.Date = updateEventRequest.Date;
+            eventup.Street = updateEventRequest.Street;
+            eventup.City = updateEventRequest.City;            eventup.Name = updateEventRequest.Name;
+            eventup.State = updateEventRequest.State;
+            eventup.ZipCode = updateEventRequest.ZipCode;
+
+            await _eventPlannerDbContext.SaveChangesAsync();
+
+            return Ok(eventup);
+        }
+
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> DeleteEvent([FromRoute] Guid id)
+        {
+            var eventdel = await _eventPlannerDbContext.Events.FindAsync(id);
+
+            if (eventdel == null)
+            {
+                return NotFound();
+            }
+
+            _eventPlannerDbContext.Events.Remove(eventdel);
+            await _eventPlannerDbContext.SaveChangesAsync();
+
+            return Ok(eventdel);
+        }
+
     }
-    
+
+
 }

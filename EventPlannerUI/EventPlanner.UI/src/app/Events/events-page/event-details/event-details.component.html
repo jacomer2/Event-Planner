@@ -17,9 +17,11 @@
                 <span> {{eventDetails.zipcode}} </span>
             </p>
             <br>
-            <div class="card todo-card">
+            <div class="card todo-card mb-5">
                 <app-todo-list></app-todo-list>
             </div>
+            <button (click)="deleteEvent(eventDetails.id)" type="button" class="btn btn-danger btn-med mt-5">Delete Event</button>
+
 
         </div>
     </div>

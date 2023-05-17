@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {Event} from 'src/app/models/event-model/event.model'
 import { EventsService } from 'src/app/services/events.service';
 
@@ -22,7 +22,7 @@ export class EventDetailsComponent implements OnInit {
     zipcode: 0
   };
 
-  constructor(private route: ActivatedRoute, private eventsService: EventsService) { }
+  constructor(private route: ActivatedRoute, private eventsService: EventsService,  private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe({
@@ -40,6 +40,15 @@ export class EventDetailsComponent implements OnInit {
         }
       }
     })
+  }
+
+  deleteEvent(id: string) {
+    this.eventsService.deleteEvent(id)
+    .subscribe({
+      next: (response) => {
+        this.router.navigate(['dashboard']);
+      }
+    });
   }
 
 }
