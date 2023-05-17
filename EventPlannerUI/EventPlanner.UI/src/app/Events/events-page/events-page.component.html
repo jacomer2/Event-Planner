@@ -10,7 +10,7 @@
         </a>
     </div>
     
-    <div class="outer-row event-card m-1 row w-100 justify-content-center">
+    <div class="outer-row event-card m-2 row w-100">
         <div *ngFor="let event of events" class="card card-back p-2 m-2 col-3">
             <a [routerLink]="['/event-details', event.id ]" class="stretched-link"></a>
             <div class="card-body p-1">
