@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Event} from 'src/app/models/event-model/event.model';
+import { EventsService } from 'src/app/services/events.service';
 
 @Component({
   selector: 'app-events-page',
@@ -8,12 +9,20 @@ import {Event} from 'src/app/models/event-model/event.model';
 })
 export class EventsPageComponent implements OnInit {
 
-  events: Event[] = [
+  events: Event[] = [];
 
-  ];
-  constructor() {  }
+  constructor(private eventsService: EventsService) {  }
+
   ngOnInit(): void {
-
+    this.eventsService.getAllEvents()
+    .subscribe({
+      next: (events)  => {
+        this.events = events;
+      },
+      error: (response) => {
+        console.log(response);
+      }
+    });
   }
 
 }

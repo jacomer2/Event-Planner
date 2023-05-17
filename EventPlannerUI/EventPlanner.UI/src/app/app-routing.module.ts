@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { EventDetailsComponent } from './Events/events-page/event-details/event-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {path: 'dashboard', component: EventsPageComponent},
   {path: 'create-event', component: CreateEventComponent},

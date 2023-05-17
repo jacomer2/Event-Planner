@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { EventDetailsComponent } from './Events/events-page/event-details/event-details.component';
 import { TodoListComponent } from './Events/events-page/event-details/todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

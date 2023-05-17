@@ -10,6 +10,7 @@ import {Event} from 'src/app/models/event-model/event.model'
 export class EventDetailsComponent {
 
   event: Event = {
+    id: "dur",
     name: "Johnson Wedding",
     description: 'Save the date',
     date: '4/24/23',
