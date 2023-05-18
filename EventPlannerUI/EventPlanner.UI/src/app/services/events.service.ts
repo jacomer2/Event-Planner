@@ -9,6 +9,7 @@ import { Event } from '../models/event-model/event.model';
 })
 export class EventsService {
 
+  
   baseApiUrl: string = environment.baseApiUrl;
 
   constructor(private http: HttpClient) { }

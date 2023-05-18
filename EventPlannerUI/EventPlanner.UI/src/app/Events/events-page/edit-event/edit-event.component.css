@@ -3,5 +3,9 @@
 }
 
 .card-back {
-    background-color: #fef9f7;
+    background-color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: #0d0d0d;
 }
