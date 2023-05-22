@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Event } from 'src/app/models/event-model/event.model';
+import { EventDetailsComponent } from '../event-details.component';
 
 
 @Component({
@@ -6,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
+
+
+  constructor (private event: EventDetailsComponent) { }
+
+  ngOnInit(): void {
+    this.populateItems();
+  }
+  
+
+  
+
 
   items: { text: string, checked: boolean } [] = [];
 
@@ -33,6 +46,12 @@ export class TodoListComponent {
     if (index !== -1) {
       item.checked = !item.checked;
     }
+  }
+
+  populateItems(): void {
+    this.items = this.event.eventDetails.tasks.map((task) => {
+      return { text: task.description, checked: task.checked };
+    });
   }
 
 }

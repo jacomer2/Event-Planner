@@ -34,7 +34,9 @@ import { EditEventComponent } from './Events/events-page/edit-event/edit-event.c
     HttpClientModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    TodoListComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

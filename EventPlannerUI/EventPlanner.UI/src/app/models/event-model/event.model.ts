@@ -1,3 +1,5 @@
+import { Task } from "../task.model";
+
 export interface Event {
     id: string,
     name: string,
@@ -6,5 +8,6 @@ export interface Event {
     street: string,
     city: string,
     state: string,
-    zipcode: number
+    zipcode: number,
+    tasks: Task[]
 }

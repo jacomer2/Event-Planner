@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Event} from 'src/app/models/event-model/event.model'
 import { EventsService } from 'src/app/services/events.service';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class EventDetailsComponent implements OnInit {
     street: '',
     city: '',
     state: '',
-    zipcode: 0
+    zipcode: 0,
+    tasks: [{description: "stored in database", checked: false},
+            {description: "checked in db", checked: true}]
   };
 
   constructor(private route: ActivatedRoute, private eventsService: EventsService,  private router: Router) { }
@@ -39,7 +42,8 @@ export class EventDetailsComponent implements OnInit {
           });
         }
       }
-    })
+    });
+    console.log("todo?");
   }
 
   deleteEvent(id: string) {

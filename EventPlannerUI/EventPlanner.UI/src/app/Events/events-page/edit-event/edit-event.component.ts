@@ -18,7 +18,8 @@ export class EditEventComponent {
     street: '',
     city: '',
     state: '',
-    zipcode: 0
+    zipcode: 0,
+    tasks: []
   };
 
   constructor(private route: ActivatedRoute, private eventsService: EventsService, private router: Router) { }

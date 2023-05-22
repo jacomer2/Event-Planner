@@ -65,9 +65,10 @@ namespace EventPlannerAPI.Controllers
             eventup.Description = updateEventRequest.Description;
             eventup.Date = updateEventRequest.Date;
             eventup.Street = updateEventRequest.Street;
-            eventup.City = updateEventRequest.City;            eventup.Name = updateEventRequest.Name;
+            eventup.City = updateEventRequest.City;
             eventup.State = updateEventRequest.State;
             eventup.ZipCode = updateEventRequest.ZipCode;
+
 
             await _eventPlannerDbContext.SaveChangesAsync();
 

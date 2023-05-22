@@ -18,7 +18,8 @@ export class CreateEventComponent {
     street: '',
     city: '',
     state: '',
-    zipcode: 0
+    zipcode: 0,
+    tasks: []
   }
 
 
