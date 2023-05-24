@@ -1,5 +1,6 @@
 ﻿using EventPlannerAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Task = EventPlannerAPI.Models.Task;
 
 namespace EventPlannerAPI.Data
 {
@@ -9,6 +10,9 @@ namespace EventPlannerAPI.Data
         {
         }
 
+
         public DbSet<Event> Events { get; set; }
+
+        public DbSet<Task> Tasks { get; set; }
     }
 }

@@ -10,5 +10,7 @@
         public Boolean Check { get; set; }
 
         public Guid EventId { get; set; } // Foreign Key
+
+        public Event Event { get; set; }
     }
 }
