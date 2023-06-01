@@ -12,7 +12,7 @@ namespace EventPlannerAPI.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Task",
+                name: "Tasks",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -33,7 +33,7 @@ namespace EventPlannerAPI.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Task_EventId",
-                table: "Task",
+                table: "Tasks",
                 column: "EventId");
         }
 
@@ -41,7 +41,7 @@ namespace EventPlannerAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Task");
+                name: "Tasks");
         }
     }
 }

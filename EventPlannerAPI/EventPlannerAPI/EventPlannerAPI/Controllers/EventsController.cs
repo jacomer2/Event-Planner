@@ -2,6 +2,7 @@
 using EventPlannerAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Task = EventPlannerAPI.Models.Task;
 
 namespace EventPlannerAPI.Controllers
 {
@@ -90,6 +91,27 @@ namespace EventPlannerAPI.Controllers
             await _eventPlannerDbContext.SaveChangesAsync();
 
             return Ok(eventdel);
+        }
+
+        [HttpGet]
+        [Route("tasks")]
+        public async Task<IActionResult> GetTasks()
+        {
+            var tasks = await _eventPlannerDbContext.Tasks.ToListAsync();
+
+            return Ok(tasks);
+        }
+
+        [HttpPost]
+        [Route("tasks")]
+        public async Task<IActionResult> AddTask([FromBody] Task taskRequest)
+        {
+            taskRequest.Id = Guid.NewGuid();
+
+            await _eventPlannerDbContext.Tasks.AddAsync(taskRequest);
+            await _eventPlannerDbContext.SaveChangesAsync();
+
+            return Ok(Request);
         }
 
     }

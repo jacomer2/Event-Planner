@@ -12,7 +12,7 @@
         public string State { get; set; }
         public long ZipCode { get; set; }
 
-        public ICollection<Task> Tasks { get; set; }
+       // public ICollection<Task> taseks { get; set; }
 
         
     }

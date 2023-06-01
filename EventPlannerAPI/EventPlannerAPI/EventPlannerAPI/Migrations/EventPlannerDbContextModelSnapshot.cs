@@ -73,7 +73,7 @@ namespace EventPlannerAPI.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("Task");
+                    b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("EventPlannerAPI.Models.Task", b =>
