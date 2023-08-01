@@ -10,7 +10,7 @@ import { CreateEventComponent } from './Events/create-event/create-event.compone
 import { HomeComponent } from './home/home.component';
 import { EventDetailsComponent } from './Events/events-page/event-details/event-details.component';
 import { TodoListComponent } from './Events/events-page/event-details/todo-list/todo-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { EditEventComponent } from './Events/events-page/edit-event/edit-event.component';
@@ -32,7 +32,8 @@ import { EditEventComponent } from './Events/events-page/edit-event/edit-event.c
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [
     TodoListComponent

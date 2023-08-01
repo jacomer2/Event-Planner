@@ -1,31 +1,31 @@
 <div class="row">
-<app-sidebar class="col-2 p-0 m-0"></app-sidebar>
-<div class="col-10 p-2 d-flex justify-content-center content outer-style">
-    <div class="card card-back shadow-lg" style="width: 62rem;">
-        <div class="card-back m-3">
-            <div class="row"> 
-                <h1 class="col-10 display-3 m-0 ps-2 pe-0"> {{eventDetails.name}} </h1>
-                <button type="button" [routerLink]="['/event-details', eventDetails.id, 'edit' ]"class="col-2 shadow-sm h-25 btn btn-secondary btn-lg mt-2 pe-3">Edit Event</button>
-
-
-            </div>
-            <h3 class="display-6"> {{eventDetails.description}} </h3>
-            <p> {{eventDetails.date}} </p>
-            <p>
-                <span> {{eventDetails.street}} </span>
+    <app-sidebar class="col-2 p-0 m-0"></app-sidebar>
+    <div class="col-10 p-2 d-flex justify-content-center content outer-style">
+        <div class="card card-back shadow-lg" style="width: 62rem;">
+            <div class="card-back m-3">
+                <div class="row">
+                    <h1 class="col-10 display-3 m-0 ps-2 pe-0"> {{eventDetails.name}} </h1>
+                    <button type="button" [routerLink]="['/event-details', eventDetails.id, 'edit' ]"
+                        class="col-2 shadow-sm h-25 btn btn-secondary btn-lg mt-2 pe-3">Edit Event</button>
+                </div>
+                <h3 class="display-6"> {{eventDetails.description}} </h3>
+                <p> {{eventDetails.date}} </p>
+                <p>
+                    <span> {{eventDetails.street}} </span>
+                    <br>
+                    <span> {{eventDetails.city}} </span>
+                    <span> {{eventDetails.state}} </span>
+                    <span> {{eventDetails.zipcode}} </span>
+                </p>
                 <br>
-                <span> {{eventDetails.city}} </span>
-                <span> {{eventDetails.state}} </span>
-                <span> {{eventDetails.zipcode}} </span>
-            </p>
-            <br>
-            <div class="card shadow todo-card mb-5">
-                <app-todo-list></app-todo-list>
+                <div class="card shadow todo-card mb-5">
+                    <app-todo-list></app-todo-list>
+                </div>
+                <button (click)="deleteEvent(eventDetails.id)" type="button"
+                    class="btn shadow-sm btn-danger btn-med mt-5">Delete Event</button>
+
+
             </div>
-            <button (click)="deleteEvent(eventDetails.id)" type="button" class="btn shadow-sm btn-danger btn-med mt-5">Delete Event</button>
-
-
         </div>
     </div>
-</div>
 </div>

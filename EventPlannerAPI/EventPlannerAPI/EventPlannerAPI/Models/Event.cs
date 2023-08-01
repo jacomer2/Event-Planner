@@ -1,4 +1,6 @@
-﻿namespace EventPlannerAPI.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EventPlannerAPI.Models
 {
     public class Event
     {
@@ -12,8 +14,9 @@
         public string State { get; set; }
         public long ZipCode { get; set; }
 
-       // public ICollection<Task> taseks { get; set; }
+        [ForeignKey("EventId")] // Add this attribute
+        public ICollection<Task> Tasks { get; set; }
 
-        
+
     }
 }

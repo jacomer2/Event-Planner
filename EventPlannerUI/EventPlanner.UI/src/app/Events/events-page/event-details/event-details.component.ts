@@ -22,7 +22,8 @@ export class EventDetailsComponent implements OnInit {
     state: '',
     zipcode: 0,
     tasks: [{description: "stored in database", checked: false},
-            {description: "checked in db", checked: true}]
+            {description: "checked in db", checked: true},
+            {description: "third stored", checked: false}]
   };
 
   constructor(private route: ActivatedRoute, private eventsService: EventsService,  private router: Router) { }
